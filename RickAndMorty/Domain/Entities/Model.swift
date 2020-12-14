@@ -7,4 +7,4 @@
 
 import Foundation
 
-protocol Model: Codable { }
+public protocol Model: Codable { }

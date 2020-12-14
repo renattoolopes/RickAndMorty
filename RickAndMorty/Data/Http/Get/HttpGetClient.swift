@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HttpGetClient {
+public protocol HttpGetClient {
     // MARK: - Types
     typealias HttpGetClientResponse = (Result<Data?, HttpClientError>) -> Void
     
