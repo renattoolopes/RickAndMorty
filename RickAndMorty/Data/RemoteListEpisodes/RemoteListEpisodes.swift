@@ -25,7 +25,7 @@ public final class RemoteListEpisodes: ListEpisodes {
             
             switch result {
                 case .success(let data):
-                    guard let episodes: [Episode] = data?.convertToModel() else {
+                    guard let episodes: [Episode] = try? makeEpisodes(withResponse: data) else {
                         return
                             completion(.failure(DomainError.failureConvertionToModel))
                     }
@@ -37,3 +37,4 @@ public final class RemoteListEpisodes: ListEpisodes {
         }
     }
 }
+

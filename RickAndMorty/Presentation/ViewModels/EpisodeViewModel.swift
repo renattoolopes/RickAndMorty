@@ -1,20 +1,26 @@
 //
-//  Episode.swift
-//  Domain
+//  EpisodeViewModel.swift
+//  Presentation
 //
 //  Created by Renato Lopes on 14/12/20.
 //
 
 import Foundation
+import Data
 
-public class Episode: Model {
+public struct EpisodeViewModel {
     // MARK: - Public Properties
     public let name: String
-    public let airDate: Date?
     public let sessionEpisodeCode: String
+    public var airDateText: String {
+        airDate.toString() ?? "Unknown"
+    }
+    
+    // MARK: - Private Properties
+    private let airDate: Date
     
     // MARK: - Inits
-    public init(name: String, airDate: Date? = nil, sessionEpisodeCode: String) {
+    public init(name: String, airDate: Date, sessionEpisodeCode: String) {
         self.name = name
         self.airDate = airDate
         self.sessionEpisodeCode = sessionEpisodeCode
