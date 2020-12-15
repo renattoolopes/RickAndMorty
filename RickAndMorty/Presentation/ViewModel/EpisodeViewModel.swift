@@ -13,14 +13,14 @@ public struct EpisodeViewModel {
     public let name: String
     public let sessionEpisodeCode: String
     public var airDateText: String {
-        airDate.toString() ?? "Unknown"
+        airDate?.toString() ?? "Unknown"
     }
     
     // MARK: - Private Properties
-    private let airDate: Date
+    private let airDate: Date?
     
     // MARK: - Inits
-    public init(name: String, airDate: Date, sessionEpisodeCode: String) {
+    public init(name: String, airDate: Date? = nil, sessionEpisodeCode: String) {
         self.name = name
         self.airDate = airDate
         self.sessionEpisodeCode = sessionEpisodeCode
