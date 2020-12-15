@@ -37,41 +37,11 @@ public final class ListEpisodesPresenter {
         listEpisodes.listAll { result in
             switch result {
             case .success(let episodes):
+                self.reactivity.didCompletedFindAll(episodes: makeEpisodesViewModel(episodes))
                 break
             case .failure(let error):
                 self.alert.show(AlertViewModel(title: "Ocorreu um erro!", message: error.localizedDescription))
             }
         }
-    }
-}
-
-public struct LoadingViewModel {
-    // MARK: - Public Properties
-    public let isLoading: Bool
-    
-    // MARK: - Inits
-    public init(isLoading: Bool) {
-        self.isLoading = isLoading
-    }
-}
-
-
-public protocol AlertViewProtocol {
-    func show(_ viewModel: AlertViewModel)
-}
-
-public protocol LoadingViewProtocol {
-    func display(_ viewModel: LoadingViewModel)
-}
-
-public struct AlertViewModel {
-    // MARK: - Public Properties
-    public let title: String
-    public let message: String
-    
-    // MARK: - Inits
-    init(title: String, message: String) {
-        self.title = title
-        self.message = message
     }
 }

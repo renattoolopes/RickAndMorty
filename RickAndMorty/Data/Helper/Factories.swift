@@ -9,7 +9,7 @@ import Domain
 import Foundation
 
 public func makeEpisodes(withResponse data: Data?) throws -> [Episode] {
-    guard let episodesReponse: [EpisodeReponse] = data?.convertToModel() else {
+    guard let episodesReponse: [EpisodeResponse] = data?.convertToModel() else {
         throw DomainError.failureConvertionToModel
     }
     

@@ -8,7 +8,7 @@
 import Domain
 
 // MARK: - Episode
-public struct EpisodeReponse: Model {
+public struct EpisodeResponse: Model {
     public let id: Int
     public let name, airDate, episode: String
     public let characters: [String]
