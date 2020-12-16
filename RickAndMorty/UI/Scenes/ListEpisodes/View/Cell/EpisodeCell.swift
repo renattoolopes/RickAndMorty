@@ -40,4 +40,24 @@ class EpisodeCell: UITableViewCell {
         airDateLabel.text = viewModel.airDate
         sessionEpisodeLabel.text = viewModel.sessionEpisodeCode
     }
+    
+    // MARK: - Private Methods
+    private func setupStyle() {
+        // Fonts
+        let titleFont: UIFont = UIFont.systemFont(ofSize: 14, weight: .bold)
+        let subTitleFont: UIFont = UIFont.systemFont(ofSize: 8, weight: .regular)
+        
+        nameLabel.font = titleFont
+        airDateLabel.font = subTitleFont
+        sessionEpisodeLabel.font = subTitleFont
+        
+        // Colors
+        let textColor: UIColor = UIColor.white
+        nameLabel.textColor = textColor
+        airDateLabel.textColor = textColor
+        sessionEpisodeLabel.textColor = textColor
+        
+        // Image
+        // TODO: Implement imageView with episode image
+    }
 }
