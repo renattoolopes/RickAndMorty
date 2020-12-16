@@ -14,9 +14,9 @@ class ListEpisodesView: UIView {
     // MARK: - Inits
     init() {
         super.init(frame: .zero)
+        setupStyle()
         setupSubviews()
         setupAutoLayout()
-        setupStyle()
     }
     
     required init?(coder: NSCoder) {
@@ -26,6 +26,14 @@ class ListEpisodesView: UIView {
     // MARK: - Public Methods
     public func registerCellInTableView(_ cell: AnyClass ,withIdentifier: String) {
         tableView.register(cell.self , forCellReuseIdentifier: withIdentifier)
+    }
+    
+    public func tableViewDataSource<T: UITableViewDataSource>(_ dataSource: T) {
+        tableView.dataSource = dataSource
+    }
+    
+    public func tableViewDelegate<T: UITableViewDelegate>(_ delegate: T) {
+        tableView.delegate = delegate
     }
     
     // MARK: - Private Methods
@@ -39,6 +47,8 @@ class ListEpisodesView: UIView {
         tableView.separatorStyle = .none
         tableView.separatorInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         tableView.allowsMultipleSelection = false
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200
     }
     
     private func setupAutoLayout() {
