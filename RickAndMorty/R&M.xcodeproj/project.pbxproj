@@ -35,6 +35,7 @@
 		FD896E662588028C00C66AC9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E652588028C00C66AC9 /* Model.swift */; };
 		FD896E6B258802AE00C66AC9 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E6A258802AE00C66AC9 /* Data+Extension.swift */; };
 		FD896E6F258802D200C66AC9 /* HttpGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E6E258802D200C66AC9 /* HttpGetClient.swift */; };
+		FDE4D6022589978D00AADC52 /* ListEpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE4D6012589978D00AADC52 /* ListEpisodesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		FD896E652588028C00C66AC9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FD896E6A258802AE00C66AC9 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		FD896E6E258802D200C66AC9 /* HttpGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetClient.swift; sourceTree = "<group>"; };
+		FDE4D6012589978D00AADC52 /* ListEpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,6 +307,7 @@
 		FD25228B25884DC600B699F4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FDE4D6012589978D00AADC52 /* ListEpisodesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -693,6 +696,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDE4D6022589978D00AADC52 /* ListEpisodesViewController.swift in Sources */,
 				FD2522992588555700B699F4 /* EpisodeCellViewModel.swift in Sources */,
 				FD25228D25884DF900B699F4 /* ListEpisodesView.swift in Sources */,
 				FD2522922588511400B699F4 /* EpisodeCell.swift in Sources */,
