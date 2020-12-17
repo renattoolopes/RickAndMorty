@@ -89,6 +89,15 @@ extension ListEpisodesViewController: LoadingViewProtocol {
 
 extension ListEpisodesViewController: AlertViewProtocol {
     public func show(_ viewModel: AlertViewModel) {
-        // Implement Alert
+        let alertController: UIAlertController = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)
+        let tryAgainAction: UIAlertAction = UIAlertAction(title: "Tentar novamente", style: .default) { _ in
+            self.listAllEpisodes()
+        }
+        
+        alertController.addAction(tryAgainAction)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }

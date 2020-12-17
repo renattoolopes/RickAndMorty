@@ -15,11 +15,6 @@ import UI
 final class ListEpisodesFactory {
 
     public static func instance() -> ListEpisodesViewController {
-        // use case
-        // httpGet
-        // loading view
-        // alert view
-        // reactivity delegate
         let httpGetClient: HttpGetClient = URLSessionAdapter()
         let url: URL = URL(string: "https://rickandmortyapi.com/api/episode")!
         let controller: ListEpisodesViewController = ListEpisodesViewController()
