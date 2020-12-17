@@ -17,6 +17,7 @@ public final class ListEpisodesViewController: UIViewController {
 
     // MARK: - Events
     public var listAllEpisodes: () -> Void = {}
+    public var openDetails: ((_ withViewModel: DetailEpisodeViewModel) -> Void)?
     
     // MARK: - Life Cycle
     public override func loadView() {
@@ -42,10 +43,10 @@ extension ListEpisodesViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard episodes.count > 0, indexPath.row <= (episodes.count - 1) else { return }
         let selectedViewModel = episodes[indexPath.row]
+        
         let detailViewModel = DetailEpisodeViewModel(episodeName: selectedViewModel.name, airDate: selectedViewModel.airDateText, sessionEpisodeCode: selectedViewModel.sessionEpisodeCode)
-        let controller = DetailsEpisodeViewController()
-        controller.viewModel = detailViewModel
-        present(controller, animated: true, completion: nil)
+        
+        openDetails?(detailViewModel)
     }
 }
 

@@ -19,7 +19,13 @@ public class DetailsEpisodeViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    private func setup() {
         guard let detailViewModel = viewModel else { return }
+        title = "Detalhes"
         detailEpisodeView?.setup(detailViewModel)
     }
 }
+

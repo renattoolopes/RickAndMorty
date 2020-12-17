@@ -22,7 +22,7 @@ final class ListEpisodesFactory {
         let listEpisodes: RemoteListEpisodes = RemoteListEpisodes(httpGetClient: httpGetClient, url: url)
         
         let presenter: ListEpisodesPresenter = ListEpisodesPresenter(listEpisodesUseCase: listEpisodes, loadingView: controller, alertView: controller, delegate: controller)
-        
+        controller.title = "Episodios"
         controller.listAllEpisodes = presenter.findAllEpisodes
         return controller
     }

@@ -62,7 +62,7 @@ class DetailsEpisodeView: UIView {
             view.translatesAutoresizingMaskIntoConstraints = false
          }
         
-        episodeTitleLabel.top(self)
+        episodeTitleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         episodeTitleLabel.leading(self)
         episodeTitleLabel.trailing(self)
         
