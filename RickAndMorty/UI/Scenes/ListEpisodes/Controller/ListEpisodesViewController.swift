@@ -38,7 +38,16 @@ public final class ListEpisodesViewController: UIViewController {
     }
 }
 
-extension ListEpisodesViewController: UITableViewDelegate { }
+extension ListEpisodesViewController: UITableViewDelegate {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard episodes.count > 0, indexPath.row <= (episodes.count - 1) else { return }
+        let selectedViewModel = episodes[indexPath.row]
+        let detailViewModel = DetailEpisodeViewModel(episodeName: selectedViewModel.name, airDate: selectedViewModel.airDateText, sessionEpisodeCode: selectedViewModel.sessionEpisodeCode)
+        let controller = DetailsEpisodeViewController()
+        controller.viewModel = detailViewModel
+        present(controller, animated: true, completion: nil)
+    }
+}
 
 extension ListEpisodesViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,15 +62,8 @@ extension ListEpisodesViewController: UITableViewDataSource {
         }
         guard episodes.count > 0, indexPath.row <= (episodes.count - 1) else { return UITableViewCell() }
         let episode: EpisodeViewModel = episodes[indexPath.row]
-        
-        let name: String = episode.name
-        let airDate: String = episode.airDateText
-        let sessionEpisodeCode: String = episode.sessionEpisodeCode
-        
-        let viewModel = EpisodeCellViewModel(name: name,
-                                             airDate: airDate,
-                                             sessionEpisodeCode: sessionEpisodeCode)
-        cell.setup(viewModel)
+
+        cell.setup(episode)
         return cell
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Presentation
 
 public final class EpisodeCell: UITableViewCell {
     // MARK: - Private Properties
@@ -37,9 +38,9 @@ public final class EpisodeCell: UITableViewCell {
     }
     
     // MARK: - Public Methods
-    public func setup(_ viewModel: EpisodeCellViewModel) {
+    public func setup(_ viewModel: EpisodeViewModel) {
         nameLabel.text = viewModel.name
-        airDateLabel.text = viewModel.airDate
+        airDateLabel.text = viewModel.airDateText
         sessionEpisodeLabel.text = viewModel.sessionEpisodeCode
     }
     
