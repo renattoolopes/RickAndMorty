@@ -11,8 +11,10 @@ import Presentation
 public final class ListEpisodesViewController: UIViewController {
     // MARK: - Private Properties
     private var listEpisodesView: ListEpisodesView?
+    private let loadingView: LoadingViewAnimation = LoadingViewAnimation()
+
     private var episodes: [EpisodeViewModel] = []
-    
+
     // MARK: - Events
     public var listAllEpisodes: () -> Void = {}
     
@@ -73,10 +75,16 @@ extension ListEpisodesViewController: ListEpisodesReactivity {
 
 extension ListEpisodesViewController: LoadingViewProtocol {
     public func display(_ viewModel: LoadingViewModel) {
-        // Implement Loading
+        if viewModel.isLoading {
+            DispatchQueue.main.async {
+                self.loadingView.startLoading(inView: self.view)
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.loadingView.stopLoading()
+            }
+        }
     }
-    
-    
 }
 
 extension ListEpisodesViewController: AlertViewProtocol {

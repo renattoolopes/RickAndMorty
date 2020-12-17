@@ -41,6 +41,7 @@
 		FD41BFC4258AA209001F7234 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41BFC3258AA209001F7234 /* ImageManager.swift */; };
 		FD41BFC9258AA278001F7234 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41BFC8258AA278001F7234 /* UIImage+Extensions.swift */; };
 		FD41BFCD258AC122001F7234 /* UIAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD41BFCC258AC122001F7234 /* UIAssets.xcassets */; };
+		FD41BFDE258AD7D5001F7234 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41BFDD258AD7D5001F7234 /* LoadingView.swift */; };
 		FD896E362587F61400C66AC9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E352587F61400C66AC9 /* Episode.swift */; };
 		FD896E392587F7FF00C66AC9 /* ListEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E382587F7FF00C66AC9 /* ListEpisodes.swift */; };
 		FD896E512587FAED00C66AC9 /* RemoteListEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E502587FAED00C66AC9 /* RemoteListEpisodes.swift */; };
@@ -220,6 +221,7 @@
 		FD41BFC3258AA209001F7234 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		FD41BFC8258AA278001F7234 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		FD41BFCC258AC122001F7234 /* UIAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UIAssets.xcassets; sourceTree = "<group>"; };
+		FD41BFDD258AD7D5001F7234 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FD896E2B2587F5E700C66AC9 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD896E2E2587F5E700C66AC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD896E352587F61400C66AC9 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 		FD25227D25884BF700B699F4 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FD41BFDC258AD7C7001F7234 /* Components */,
 				FD41BFCB258AC10D001F7234 /* Resources */,
 				FD41BFC2258AA1FD001F7234 /* StyleGuide */,
 				FD41BF95258A580F001F7234 /* Extensions */,
@@ -483,6 +486,14 @@
 				FD41BFCC258AC122001F7234 /* UIAssets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FD41BFDC258AD7C7001F7234 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FD41BFDD258AD7D5001F7234 /* LoadingView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		FD896E0F2587F5BE00C66AC9 = {
@@ -913,6 +924,7 @@
 				FD41BF97258A581F001F7234 /* UIView+Extensions.swift in Sources */,
 				FD41BFC9258AA278001F7234 /* UIImage+Extensions.swift in Sources */,
 				FD41BFC4258AA209001F7234 /* ImageManager.swift in Sources */,
+				FD41BFDE258AD7D5001F7234 /* LoadingView.swift in Sources */,
 				FD25228D25884DF900B699F4 /* ListEpisodesView.swift in Sources */,
 				FD2522922588511400B699F4 /* EpisodeCell.swift in Sources */,
 			);

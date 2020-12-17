@@ -39,10 +39,10 @@ public final class ListEpisodesPresenter {
             guard let self: ListEpisodesPresenter = self else { return }
             switch result {
             case .success(let episodes):
-                self.loading.display(LoadingViewModel(isLoading: true))
+                self.loading.display(LoadingViewModel(isLoading: false))
                 self.reactivity.didCompletedFindAll(episodes: self.makeEpisodesViewModel(episodes))
             case .failure(let error):
-                self.loading.display(LoadingViewModel(isLoading: true))
+                self.loading.display(LoadingViewModel(isLoading: false))
                 self.alert.show(AlertViewModel(title: "Ocorreu um erro!", message: error.localizedDescription))
             }
         }
