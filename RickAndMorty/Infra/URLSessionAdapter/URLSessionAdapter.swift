@@ -39,6 +39,6 @@ public final class URLSessionAdapter: HttpGetClient {
                     completion(.failure(.noConnectivity))
                 }
             }
-        }
+        }.resume()
     }
 }

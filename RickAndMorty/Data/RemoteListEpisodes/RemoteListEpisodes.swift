@@ -14,7 +14,7 @@ public final class RemoteListEpisodes: ListEpisodes {
     private let episodesURL: URL
     
     // MARK: - Inits
-    init(httpGetClient: HttpGetClient, url: URL) {
+    public init(httpGetClient: HttpGetClient, url: URL) {
         self.httpGetClient = httpGetClient
         self.episodesURL = url
     }

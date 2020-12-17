@@ -9,11 +9,11 @@ import Domain
 import Foundation
 
 public func makeEpisodes(withResponse data: Data?) throws -> [Episode] {
-    guard let episodesReponse: [EpisodeResponse] = data?.convertToModel() else {
+    guard let episodesReponse: AllEpisodesResponse = data?.convertToModel() else {
         throw DomainError.failureConvertionToModel
     }
     
-    let items: [Episode] = episodesReponse.map { (response) -> Episode in
+    let items: [Episode] = episodesReponse.results.map { (response) -> Episode in
         return Episode(name: response.name, airDate: response.airDate.date(), sessionEpisodeCode: response.episode)
     }
     

@@ -9,7 +9,7 @@ import UIKit
 
 public final class EpisodeCell: UITableViewCell {
     // MARK: - Private Properties
-    private let iconImageView: UIImageView = UIImageView()
+    private let container: UIView = UIView()
     private let nameLabel: UILabel = UILabel()
     private let sessionEpisodeLabel: UILabel = UILabel()
     private let airDateLabel: UILabel = UILabel()
@@ -34,7 +34,6 @@ public final class EpisodeCell: UITableViewCell {
         nameLabel.text = nil
         airDateLabel.text = nil
         sessionEpisodeLabel.text = nil
-        iconImageView.image = nil
     }
     
     // MARK: - Public Methods
@@ -46,8 +45,10 @@ public final class EpisodeCell: UITableViewCell {
     
     // MARK: - Private Methods
     private func setupSubviews() {
+        contentView.addSubview(container)
+
         [nameLabel, airDateLabel, sessionEpisodeLabel].forEach { view in
-            addSubview(view)
+            container.addSubview(view)
         }
     }
     
@@ -55,28 +56,34 @@ public final class EpisodeCell: UITableViewCell {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         airDateLabel.translatesAutoresizingMaskIntoConstraints = false
         sessionEpisodeLabel.translatesAutoresizingMaskIntoConstraints = false
+        container.translatesAutoresizingMaskIntoConstraints = false
         
-        nameLabel.top(self)
-        nameLabel.leading(self)
-        nameLabel.trailing(self)
+        container.fillContainer(contentView, withConstant: 8)
+        
+        nameLabel.top(container,withConstant: 8)
+        nameLabel.leading(container, withConstant: 8)
+        nameLabel.trailing(container, withConstant: 8)
         
         airDateLabel.top(nameLabel, withConstant: 8, pinnedFor: .bottom)
-        airDateLabel.leading(self)
-        airDateLabel.trailing(self)
+        airDateLabel.leading(container, withConstant: 8)
+        airDateLabel.trailing(container, withConstant: 8)
         
         sessionEpisodeLabel.top(airDateLabel, withConstant: 8, pinnedFor: .bottom)
-        sessionEpisodeLabel.leading(self)
-        sessionEpisodeLabel.trailing(self)
-        sessionEpisodeLabel.bottom(self)
+        sessionEpisodeLabel.leading(container, withConstant: 8)
+        sessionEpisodeLabel.trailing(container, withConstant: 8)
+        sessionEpisodeLabel.bottom(container, withConstant: 8)
     }
     
     private func setupStyle() {
         // View
-        backgroundColor = .lightGray
+        backgroundColor = .darkGray
+        contentView.backgroundColor = .darkGray
+        container.backgroundColor = .lightGray
+        container.layer.cornerRadius = 8
         
         // Fonts
-        let titleFont: UIFont = UIFont.systemFont(ofSize: 14, weight: .bold)
-        let subTitleFont: UIFont = UIFont.systemFont(ofSize: 8, weight: .regular)
+        let titleFont: UIFont = UIFont.systemFont(ofSize: 22, weight: .bold)
+        let subTitleFont: UIFont = UIFont.systemFont(ofSize: 14, weight: .regular)
         
         nameLabel.font = titleFont
         nameLabel.numberOfLines = 0
@@ -90,71 +97,5 @@ public final class EpisodeCell: UITableViewCell {
         nameLabel.textColor = textColor
         airDateLabel.textColor = textColor
         sessionEpisodeLabel.textColor = textColor
-        
-        // Image
-        // TODO: Implement imageView with episode image
     }
 }
-
-// MARK: - Autolayout Extension
-extension UIView {
-    
-    enum AnchorViewType {
-        case top
-        case bottom
-        case leading
-        case trailing
-    }
-    
-    func fillContainer(_ view: UIView, withConstant: CGFloat = 0) {
-        self.constraints.forEach { constraint in
-            self.removeConstraint(constraint)
-        }
-        
-        top(view, withConstant: withConstant)
-        bottom(view, withConstant: withConstant)
-        leading(view, withConstant: withConstant)
-        trailing(view, withConstant: withConstant)
-
-    }
-    
-    func top(_ view: UIView, withConstant: CGFloat = 0, pinnedFor: AnchorViewType = .top) {
-        switch pinnedFor {
-        case .top: return topAnchor.constraint(equalTo: view.topAnchor, constant: withConstant).isActive = true
-        case .bottom: return topAnchor.constraint(equalTo: view.bottomAnchor, constant: withConstant).isActive = true
-        default:
-            print("Failed pinned view in TOP")
-        }
-    }
-    
-    func bottom(_ view: UIView, withConstant: CGFloat = 0, pinnedFor: AnchorViewType = .bottom) {
-        switch pinnedFor {
-        case .top: return bottomAnchor.constraint(equalTo: view.topAnchor, constant: withConstant).isActive = true
-        case .bottom: return bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: withConstant).isActive = true
-        default:
-            print("Failed pinned view in TOP")
-        }
-    }
-    
-    func leading(_ view: UIView, withConstant: CGFloat = 0, pinnedFor: AnchorViewType = .leading) {
-        switch pinnedFor {
-        case .leading: return leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: withConstant).isActive = true
-        case .trailing: return leadingAnchor.constraint(equalTo: view.trailingAnchor, constant: withConstant).isActive = true
-        default:
-            print("Failed pinned view in TOP")
-        }
-    }
-    
-    func trailing(_ view: UIView, withConstant: CGFloat = 0, pinnedFor: AnchorViewType = .trailing) {
-        
-        switch pinnedFor {
-        case .leading: return trailingAnchor.constraint(equalTo: view.leadingAnchor, constant: withConstant).isActive = true
-        case .trailing: return trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: withConstant).isActive = true
-        default:
-            print("Failed pinned view in Trailing")
-        }
-    }
-}
-
-
-

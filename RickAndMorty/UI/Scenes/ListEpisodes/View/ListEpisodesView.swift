@@ -36,28 +36,33 @@ class ListEpisodesView: UIView {
         tableView.delegate = delegate
     }
     
+    public func reloadTableView() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self: ListEpisodesView = self else { return }
+            self.tableView.reloadData()
+        }
+    }
+    
     // MARK: - Private Methods
     private func setupSubviews() {
         addSubview(tableView)
     }
     
     private func setupStyle() {
-        backgroundColor = .white
+        backgroundColor = .darkGray
         tableView.backgroundColor = .darkGray
         tableView.separatorStyle = .none
-        tableView.separatorInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        tableView.separatorInsetReference = .fromAutomaticInsets
         tableView.allowsMultipleSelection = false
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 200
+        tableView.estimatedRowHeight = 500
     }
     
     private func setupAutoLayout() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
 }
-
-
