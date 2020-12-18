@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol LoadingViewProtocol {
+    // MARK: - Public Methods
     func display(_ viewModel: LoadingViewModel)
 }
 

@@ -12,7 +12,6 @@ public final class ListEpisodesViewController: UIViewController {
     // MARK: - Private Properties
     private var listEpisodesView: ListEpisodesView?
     private let loadingView: LoadingViewAnimation = LoadingViewAnimation()
-
     private var episodes: [EpisodeViewModel] = []
 
     // MARK: - Events
@@ -31,6 +30,7 @@ public final class ListEpisodesViewController: UIViewController {
         listAllEpisodes()
     }
     
+    // MARK: - Private Methods
     private func tableViewConfiguration() {        
         listEpisodesView?.registerCellInTableView(EpisodeCell.self,
                                                   withIdentifier: EpisodeCell.identifier)
@@ -39,6 +39,7 @@ public final class ListEpisodesViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension ListEpisodesViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard episodes.count > 0, indexPath.row <= (episodes.count - 1) else { return }
@@ -50,6 +51,7 @@ extension ListEpisodesViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - UITableViewDataSource
 extension ListEpisodesViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return episodes.count
@@ -69,6 +71,7 @@ extension ListEpisodesViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - ListEpisodesReactivity
 extension ListEpisodesViewController: ListEpisodesReactivity {
     public func didCompletedFindAll(episodes: [EpisodeViewModel]) {
         self.episodes = episodes
@@ -76,6 +79,7 @@ extension ListEpisodesViewController: ListEpisodesReactivity {
     }
 }
 
+// MARK: - LoadingViewProtocol
 extension ListEpisodesViewController: LoadingViewProtocol {
     public func display(_ viewModel: LoadingViewModel) {
         if viewModel.isLoading {
@@ -90,6 +94,7 @@ extension ListEpisodesViewController: LoadingViewProtocol {
     }
 }
 
+// MARK: - AlertViewProtocol
 extension ListEpisodesViewController: AlertViewProtocol {
     public func show(_ viewModel: AlertViewModel) {
         let alertController: UIAlertController = UIAlertController(title: viewModel.title, message: viewModel.message, preferredStyle: .alert)

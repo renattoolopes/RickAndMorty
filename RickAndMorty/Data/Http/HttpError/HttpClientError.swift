@@ -14,6 +14,7 @@ public enum HttpClientError: Error, LocalizedError {
     case unauthorized
     case forbidden
     
+    // MARK: - Public Properties
     public var errorDescription: String? {
         switch self {
         case .noConnectivity: return "Verifique a conexão com a internet."

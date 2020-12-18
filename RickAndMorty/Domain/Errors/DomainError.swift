@@ -11,6 +11,7 @@ public enum DomainError: Error, LocalizedError {
     case failureConvertionToModel
     case falureConvertionToData
     
+    // MARK: - Public Properties
     public var errorDescription: String? {
         switch self {
             case .failureConvertionToModel: return "Falha ao obter as informações"

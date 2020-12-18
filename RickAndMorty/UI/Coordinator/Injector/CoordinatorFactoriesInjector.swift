@@ -8,9 +8,15 @@
 import Foundation
 
 public class CoordinatorFactoriesInjector {
-    private var dependencies: [String: () -> AnyObject] = [ : ]
+    // MARK: - Public Properties
     public static var shared: CoordinatorFactoriesInjector = CoordinatorFactoriesInjector()
+    // MARK: - Private Properties
+    private var dependencies: [String: () -> AnyObject] = [ : ]
     
+    // MARK: - Inits
+    private init() { }
+    
+    // MARK: - Public Methods
     public func register<T>(forType: T.Type, factory: @escaping () -> AnyObject) {
         let key: String = String(describing: T.self)
         dependencies[key] = factory
@@ -21,6 +27,4 @@ public class CoordinatorFactoriesInjector {
         guard let factory: () -> AnyObject = dependencies[key] else { return nil }
         return factory() as? T
     }
-    
-    private init() { }
 }

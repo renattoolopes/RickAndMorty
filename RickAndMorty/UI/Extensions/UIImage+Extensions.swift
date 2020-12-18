@@ -9,6 +9,6 @@ import UIKit
 
 public extension UIImage {
     static func image(_ name: String) -> UIImage? {
-        return UIImage(named: name, in: Bundle(for: ListEpisodesView.self), with: nil)
+        return UIImage(named: name, in: Bundle(for: self), with: nil)
     }
 }

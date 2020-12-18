@@ -8,9 +8,13 @@
 import UIKit
 
 public class LoadingViewAnimation {
+    // MARK: - Private Properties
     private var backgroundView: UIView?
     
+    // MARK: - Inits
     init() { /* no-op */}
+    
+    // MARK: - Public Methods
     
     /// Method show loading view
     ///     - Parameters:
@@ -40,6 +44,13 @@ public class LoadingViewAnimation {
         image.startAnimating()
     }
     
+    /// Method stop and remove loading
+    public func stopLoading() {
+        backgroundView?.removeFromSuperview()
+        backgroundView = nil
+    }
+    
+    // MARK: - Private Methods
     private func rotateAnimation(forView view: UIView) {
         let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         rotation.toValue = NSNumber(value: Double.pi * 2)
@@ -47,11 +58,5 @@ public class LoadingViewAnimation {
         rotation.isCumulative = true
         rotation.repeatCount = Float.greatestFiniteMagnitude
         view.layer.add(rotation, forKey: "rotationAnimation")
-    }
-
-    /// Method stop and remove loading
-    public func stopLoading() {
-        backgroundView?.removeFromSuperview()
-        backgroundView = nil
     }
 }

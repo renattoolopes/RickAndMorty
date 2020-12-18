@@ -8,6 +8,8 @@
 import Foundation
 
 public extension Data {
+    
+    // MARK: - Public Methods
     func convertToModel<T: Decodable>() -> T? {
         return try? JSONDecoder().decode(T.self, from: self)
     }

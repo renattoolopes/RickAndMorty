@@ -9,14 +9,18 @@ import UIKit
 import Presentation
 
 public final class ListEpisodesCoordinator: Coordinator {
+    // MARK: - Public Properties
     public var childCoordinator: [Coordinator]
+    // MARK: - Private Properties
     private var navigation: UINavigationController
     
+    // MARK: - Inits
     public init(navigation: UINavigationController) {
         childCoordinator = [Coordinator]()
         self.navigation = navigation
     }
     
+    // MARK: - Public Methods
     public func start() {
         let injector: CoordinatorFactoriesInjector = CoordinatorFactoriesInjector.shared
         
@@ -33,16 +37,21 @@ public final class ListEpisodesCoordinator: Coordinator {
 }
 
 public final class DetailsEpisodeCoordinator: Coordinator {
+    // MARK: - Public Properties
     public var childCoordinator: [Coordinator]
+    
+    // MARK: - Private Properties
     private var navigation: UINavigationController
     private var viewModel: DetailEpisodeViewModel?
     
-    init(navigation: UINavigationController, viewModel: DetailEpisodeViewModel? = nil) {
+    // MARK: - Inits
+    public init(navigation: UINavigationController, viewModel: DetailEpisodeViewModel? = nil) {
         self.childCoordinator = [Coordinator]()
         self.navigation = navigation
         self.viewModel = viewModel
     }
     
+    // MARK: - Public Methods
     public func start() {
         let injector: CoordinatorFactoriesInjector = CoordinatorFactoriesInjector.shared
         
@@ -54,7 +63,9 @@ public final class DetailsEpisodeCoordinator: Coordinator {
 
 
  public protocol Coordinator {
+    // MARK: - Public Properties
     var childCoordinator: [Coordinator] { get set }
     
+    // MARK: - Public Methods
     func start()
 }

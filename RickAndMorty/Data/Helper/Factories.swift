@@ -8,6 +8,7 @@
 import Domain
 import Foundation
 
+// MARK: - Public Methods
 public func makeEpisodes(withResponse data: Data?) throws -> [Episode] {
     guard let episodesReponse: AllEpisodesResponse = data?.convertToModel() else {
         throw DomainError.failureConvertionToModel

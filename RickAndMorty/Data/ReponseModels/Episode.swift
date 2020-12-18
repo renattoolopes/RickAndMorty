@@ -7,23 +7,22 @@
 
 import Domain
 
-// MARK: - Episode
-
 public struct AllEpisodesResponse: Model {
-    let info: InfoPageResponse
-    let results: [EpisodeResponse]
+    // MARK: - Public Properties
+    public let info: InfoPageResponse
+    public let results: [EpisodeResponse]
 }
 
 public struct InfoPageResponse: Model {
-    let count: Int
-    let pages: Int
-    let next: String
-    let prev: String?
+    // MARK: - Public Properties
+    public let count: Int
+    public let pages: Int
+    public let next: String
+    public let prev: String?
 }
 
 public struct EpisodeResponse: Model {
-    
-    
+    // MARK: - Public Properties
     public let id: Int
     public let name, airDate, episode: String
     public let characters: [String]

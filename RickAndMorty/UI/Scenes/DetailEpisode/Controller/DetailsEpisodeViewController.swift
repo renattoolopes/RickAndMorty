@@ -9,9 +9,12 @@ import UIKit
 import Presentation
 
 public class DetailsEpisodeViewController: UIViewController {
-    private var detailEpisodeView: DetailsEpisodeView?
+    // MARK: - Public Properties
     public var viewModel: DetailEpisodeViewModel?
+    // MARK: - Private Properties
+    private var detailEpisodeView: DetailsEpisodeView?
     
+    // MARK: - Life cyle
     public override func loadView() {
         detailEpisodeView = DetailsEpisodeView()
         view = detailEpisodeView
@@ -22,6 +25,7 @@ public class DetailsEpisodeViewController: UIViewController {
         setup()
     }
     
+    // MARK: - Private Methods
     private func setup() {
         guard let detailViewModel = viewModel else { return }
         title = "Detalhes"

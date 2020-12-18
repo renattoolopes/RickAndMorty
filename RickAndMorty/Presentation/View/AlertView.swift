@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol AlertViewProtocol {
+    // MARK: - Public Methods
     func show(_ viewModel: AlertViewModel)
 }
 

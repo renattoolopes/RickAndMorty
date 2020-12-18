@@ -17,6 +17,7 @@ public final class URLSessionAdapter: HttpGetClient {
         self.configuration = configuration
     }
     
+    // MARK: - Public Methods
     public func get(url: URL, _ completion: @escaping HttpGetClientResponse) {
         let session: URLSession = URLSession(configuration: configuration)
         

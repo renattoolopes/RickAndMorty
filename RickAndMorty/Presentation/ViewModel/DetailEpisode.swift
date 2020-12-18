@@ -8,6 +8,7 @@
 import Foundation
 
 public struct DetailEpisodeViewModel {
+    // MARK: - Public Properties
     public var episodeTitle: String {
         return "O nome do episodio é:"
     }
@@ -24,7 +25,7 @@ public struct DetailEpisodeViewModel {
     public var airDate: String
     public var sessionEpisodeCode: String
     
-    
+    // MARK: - Inits
     public init(episodeName: String, airDate: String, sessionEpisodeCode: String) {
         self.episodeName = episodeName
         self.airDate = airDate

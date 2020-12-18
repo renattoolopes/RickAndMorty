@@ -17,6 +17,7 @@ public extension UIView {
         case trailing
     }
     
+    /// This method set top, bottom, leading and trailing constraints of view for superview
     func fillContainer(_ view: UIView, withConstant: CGFloat = 0) {
         self.constraints.forEach { constraint in
             self.removeConstraint(constraint)
@@ -29,6 +30,7 @@ public extension UIView {
 
     }
     
+    /// This method set top constraint of view for superview
     func top(_ view: UIView, withConstant: CGFloat = 0, pinnedFor: AnchorViewType = .top) {
         switch pinnedFor {
         case .top: return topAnchor.constraint(equalTo: view.topAnchor, constant: withConstant).isActive = true
@@ -38,6 +40,7 @@ public extension UIView {
         }
     }
     
+    /// This method set bottom constraint of view for superview
     func bottom(_ view: UIView, withConstant: CGFloat = 0, pinnedFor: AnchorViewType = .bottom) {
         switch pinnedFor {
         case .top: return bottomAnchor.constraint(equalTo: view.topAnchor, constant: withConstant).isActive = true
@@ -47,6 +50,7 @@ public extension UIView {
         }
     }
     
+    /// This method set leading constraint of view for superview
     func leading(_ view: UIView, withConstant: CGFloat = 0, pinnedFor: AnchorViewType = .leading) {
         switch pinnedFor {
         case .leading: return leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: withConstant).isActive = true
@@ -56,6 +60,7 @@ public extension UIView {
         }
     }
     
+    /// This method set trailing constraint of view for superview
     func trailing(_ view: UIView, withConstant: CGFloat = 0, pinnedFor: AnchorViewType = .trailing) {
         
         switch pinnedFor {
