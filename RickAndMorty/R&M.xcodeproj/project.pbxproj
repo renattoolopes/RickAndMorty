@@ -54,6 +54,8 @@
 		FD896E6F258802D200C66AC9 /* HttpGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E6E258802D200C66AC9 /* HttpGetClient.swift */; };
 		FDD9E3B6258BC0F000513EF5 /* DetailEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9E3B5258BC0F000513EF5 /* DetailEpisode.swift */; };
 		FDD9E3BC258BD43400513EF5 /* ListEpisodesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9E3BB258BD43300513EF5 /* ListEpisodesCoordinator.swift */; };
+		FDD9E3C1258C25AC00513EF5 /* DetailsEpisodeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9E3C0258C25AC00513EF5 /* DetailsEpisodeFactory.swift */; };
+		FDD9E3C6258C26FD00513EF5 /* CoordinatorFactoriesInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9E3C5258C26FD00513EF5 /* CoordinatorFactoriesInjector.swift */; };
 		FDE4D6022589978D00AADC52 /* ListEpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE4D6012589978D00AADC52 /* ListEpisodesViewController.swift */; };
 		FDE4D60C2589984700AADC52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE4D60B2589984700AADC52 /* AppDelegate.swift */; };
 		FDE4D60E2589984700AADC52 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE4D60D2589984700AADC52 /* SceneDelegate.swift */; };
@@ -239,6 +241,8 @@
 		FD896E6E258802D200C66AC9 /* HttpGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetClient.swift; sourceTree = "<group>"; };
 		FDD9E3B5258BC0F000513EF5 /* DetailEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpisode.swift; sourceTree = "<group>"; };
 		FDD9E3BB258BD43300513EF5 /* ListEpisodesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesCoordinator.swift; sourceTree = "<group>"; };
+		FDD9E3C0258C25AC00513EF5 /* DetailsEpisodeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEpisodeFactory.swift; sourceTree = "<group>"; };
+		FDD9E3C5258C26FD00513EF5 /* CoordinatorFactoriesInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoriesInjector.swift; sourceTree = "<group>"; };
 		FDE4D6012589978D00AADC52 /* ListEpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesViewController.swift; sourceTree = "<group>"; };
 		FDE4D6092589984700AADC52 /* Main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDE4D60B2589984700AADC52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -459,6 +463,7 @@
 		FD41BF9C258A7C03001F7234 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				FDD9E3BF258C259F00513EF5 /* DetailsEpisode */,
 				FD41BF9D258A7C10001F7234 /* ListEpisodes */,
 			);
 			path = Factories;
@@ -642,9 +647,26 @@
 		FDD9E3BA258BD42300513EF5 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				FDD9E3C4258C26F400513EF5 /* Injector */,
 				FDD9E3BB258BD43300513EF5 /* ListEpisodesCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		FDD9E3BF258C259F00513EF5 /* DetailsEpisode */ = {
+			isa = PBXGroup;
+			children = (
+				FDD9E3C0258C25AC00513EF5 /* DetailsEpisodeFactory.swift */,
+			);
+			path = DetailsEpisode;
+			sourceTree = "<group>";
+		};
+		FDD9E3C4258C26F400513EF5 /* Injector */ = {
+			isa = PBXGroup;
+			children = (
+				FDD9E3C5258C26FD00513EF5 /* CoordinatorFactoriesInjector.swift */,
+			);
+			path = Injector;
 			sourceTree = "<group>";
 		};
 		FDE4D60A2589984700AADC52 /* Main */ = {
@@ -962,6 +984,7 @@
 				FD41BFDE258AD7D5001F7234 /* LoadingView.swift in Sources */,
 				FD41BFEA258AF135001F7234 /* DetailsEpisodeView.swift in Sources */,
 				FD25228D25884DF900B699F4 /* ListEpisodesView.swift in Sources */,
+				FDD9E3C6258C26FD00513EF5 /* CoordinatorFactoriesInjector.swift in Sources */,
 				FD2522922588511400B699F4 /* EpisodeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -997,6 +1020,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDE4D60C2589984700AADC52 /* AppDelegate.swift in Sources */,
+				FDD9E3C1258C25AC00513EF5 /* DetailsEpisodeFactory.swift in Sources */,
 				FDE4D60E2589984700AADC52 /* SceneDelegate.swift in Sources */,
 				FD41BF9F258A7C25001F7234 /* ListEpisodesFactory.swift in Sources */,
 			);
