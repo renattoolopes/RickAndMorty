@@ -13,7 +13,6 @@ import Presentation
 import UI
 
 final class DetailsEpisodeFactory {
-
     public static func instance() -> DetailsEpisodeViewController {
         return DetailsEpisodeViewController()
     }

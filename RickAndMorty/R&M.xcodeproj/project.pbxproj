@@ -669,15 +669,31 @@
 			path = Injector;
 			sourceTree = "<group>";
 		};
+		FDD9E3CB258C33E900513EF5 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				FDE4D60B2589984700AADC52 /* AppDelegate.swift */,
+				FDE4D60D2589984700AADC52 /* SceneDelegate.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		FDD9E3CC258C33F500513EF5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FDE4D6192589984A00AADC52 /* Info.plist */,
+				FDE4D6142589984A00AADC52 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		FDE4D60A2589984700AADC52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FDD9E3CC258C33F500513EF5 /* Resources */,
+				FDD9E3CB258C33E900513EF5 /* Configuration */,
 				FD41BF9C258A7C03001F7234 /* Factories */,
-				FDE4D60B2589984700AADC52 /* AppDelegate.swift */,
-				FDE4D60D2589984700AADC52 /* SceneDelegate.swift */,
-				FDE4D6142589984A00AADC52 /* Assets.xcassets */,
 				FDE4D6162589984A00AADC52 /* LaunchScreen.storyboard */,
-				FDE4D6192589984A00AADC52 /* Info.plist */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1493,7 +1509,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FCZ6JTPKG7;
-				INFOPLIST_FILE = Main/Info.plist;
+				INFOPLIST_FILE = Main/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1515,7 +1531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FCZ6JTPKG7;
-				INFOPLIST_FILE = Main/Info.plist;
+				INFOPLIST_FILE = Main/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
