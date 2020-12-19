@@ -7,4 +7,10 @@
 
 import Foundation
 
-public protocol Model: Codable { }
+public protocol Model: Codable, Equatable { }
+
+public extension Model {
+    func convertToData() -> Data? {
+        return try? JSONEncoder().encode(self)
+    }
+}

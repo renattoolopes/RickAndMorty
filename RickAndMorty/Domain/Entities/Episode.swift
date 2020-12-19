@@ -19,4 +19,10 @@ public class Episode: Model {
         self.airDate = airDate
         self.sessionEpisodeCode = sessionEpisodeCode
     }
+    
+    public static func == (lhs: Episode, rhs: Episode) -> Bool {
+        return lhs.name == rhs.name &&
+            lhs.airDate == rhs.airDate &&
+            lhs.sessionEpisodeCode == rhs.sessionEpisodeCode
+    }
 }
