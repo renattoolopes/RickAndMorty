@@ -61,33 +61,7 @@ class RemoteListEpisodesTests: XCTestCase {
             promise.fulfill()
         }
         
-        httpClient.completionWithSuccess(makeEpisodesResponse().convertToData())
+        httpClient.completionWithSuccess(makeAllEpisodesResponse().convertToData())
         wait(for: [promise], timeout: 1.0)        
-    }
-}
-
-extension RemoteListEpisodesTests {
-    func makeEpisodesResponse() -> AllEpisodesResponse {
-        let info = InfoPageResponse(count: 0, pages: 1, next: "")
-        let result = [ EpisodeResponse(id: 0,
-                                       name: "EpisodeTest 01",
-                                       airDate: "December 2, 2013",
-                                       episode: "S00E00",
-                                       characters: [
-                                        "https://rickandmortyapi.com/api/character/1",
-                                        "https://rickandmortyapi.com/api/character/2"],
-                                       url: "",
-                                       created: ""),
-                       EpisodeResponse(id: 1,
-                                       name: "EpisodeTest 02",
-                                       airDate: "December 2, 2013",
-                                       episode: "S01E01",
-                                       characters: [
-                                        "https://rickandmortyapi.com/api/character/1",
-                                        "https://rickandmortyapi.com/api/character/2"],
-                                       url: "",
-                                       created: "")
-        ]
-        return AllEpisodesResponse(info: info, results: result)
     }
 }
