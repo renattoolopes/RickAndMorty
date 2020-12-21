@@ -12,13 +12,13 @@ public protocol AlertViewProtocol {
     func show(_ viewModel: AlertViewModel)
 }
 
-public struct AlertViewModel {
+public struct AlertViewModel: Equatable {
     // MARK: - Public Properties
     public let title: String
     public let message: String
     
     // MARK: - Inits
-    init(title: String, message: String) {
+    public init(title: String, message: String) {
         self.title = title
         self.message = message
     }

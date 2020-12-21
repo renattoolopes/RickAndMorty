@@ -12,7 +12,7 @@ public protocol LoadingViewProtocol {
     func display(_ viewModel: LoadingViewModel)
 }
 
-public struct LoadingViewModel {
+public struct LoadingViewModel: Equatable {
     // MARK: - Public Properties
     public let isLoading: Bool
     

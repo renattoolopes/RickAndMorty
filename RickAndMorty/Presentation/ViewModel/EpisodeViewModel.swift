@@ -8,7 +8,7 @@
 import Foundation
 import Data
 
-public struct EpisodeViewModel {
+public struct EpisodeViewModel: Equatable {
     // MARK: - Public Properties
     public let name: String
     public let sessionEpisodeCode: String
