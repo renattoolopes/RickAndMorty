@@ -16,7 +16,7 @@ final class ListEpisodesFactory {
 
     public static func instance() -> ListEpisodesViewController {
         let httpGetClient: HttpGetClient = URLSessionAdapter()
-        let url: URL = URL(string: "https://rickandmortyapi.com/api/episode")!
+        let url: URL = URL(string: "")!
         let controller: ListEpisodesViewController = ListEpisodesViewController()
 
         let listEpisodes: RemoteListEpisodes = RemoteListEpisodes(httpGetClient: httpGetClient, url: url)

@@ -270,6 +270,8 @@
 		FD896E652588028C00C66AC9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		FD896E6A258802AE00C66AC9 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		FD896E6E258802D200C66AC9 /* HttpGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetClient.swift; sourceTree = "<group>"; };
+		FD9185CD25A3D81D00115FBB /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		FD9185CE25A3D86700115FBB /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FD982B15258FCCD8000BA11D /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD982B19258FCCD8000BA11D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD982B27258FF677000BA11D /* URLSessionAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAdapterTests.swift; sourceTree = "<group>"; };
@@ -717,6 +719,15 @@
 			path = Get;
 			sourceTree = "<group>";
 		};
+		FD9185CC25A3D80A00115FBB /* Env */ = {
+			isa = PBXGroup;
+			children = (
+				FD9185CD25A3D81D00115FBB /* Debug.xcconfig */,
+				FD9185CE25A3D86700115FBB /* Release.xcconfig */,
+			);
+			path = Env;
+			sourceTree = "<group>";
+		};
 		FD982B16258FCCD8000BA11D /* InfraTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,6 +836,7 @@
 		FDE4D60A2589984700AADC52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FD9185CC25A3D80A00115FBB /* Env */,
 				FDD9E3CC258C33F500513EF5 /* Resources */,
 				FDD9E3CB258C33E900513EF5 /* Configuration */,
 				FD41BF9C258A7C03001F7234 /* Factories */,
@@ -1891,6 +1903,7 @@
 		};
 		FDE4D61B2589984A00AADC52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD9185CD25A3D81D00115FBB /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1913,6 +1926,7 @@
 		};
 		FDE4D61C2589984A00AADC52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD9185CE25A3D86700115FBB /* Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
