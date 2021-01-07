@@ -16,10 +16,39 @@ public final class ListEpisodesControllerFactory {
         let controller: ListEpisodesViewController = ListEpisodesViewController()
                 
         let presenter: ListEpisodesPresenter = ListEpisodesPresenter(listEpisodesUseCase: useCase,
-                                                                     loadingView: controller,
-                                                                     alertView: controller, delegate: controller)
+                                                                     loadingView: WeakProxy(controller),
+                                                                     alertView: WeakProxy(controller),
+                                                                     delegate: WeakProxy(controller))
         controller.title = "Episodios"
         controller.listAllEpisodes = presenter.findAllEpisodes
         return controller
     }
+}
+
+final class WeakProxy<T: AnyObject> {
+    private weak var weakInstance: T?
+    
+    init(_ strongInstance: T?) {
+        self.weakInstance = strongInstance
+    }
+}
+
+
+extension WeakProxy: AlertViewProtocol where T: AlertViewProtocol {
+    func show(_ viewModel: AlertViewModel) {
+        weakInstance?.show(viewModel)
+    }
+}
+
+extension WeakProxy: LoadingViewProtocol where T: LoadingViewProtocol {
+    func display(_ viewModel: LoadingViewModel) {
+        weakInstance?.display(viewModel)
+    }
+}
+
+extension WeakProxy: ListEpisodesReactivity where T: ListEpisodesReactivity {
+    func didCompletedFindAll(episodes: [EpisodeViewModel]) {
+        weakInstance?.didCompletedFindAll(episodes: episodes)
+    }
+
 }
