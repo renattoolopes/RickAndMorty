@@ -9,8 +9,8 @@ import Foundation
 import Domain
 import UI
 
-final class ListEpisodesComposer {
-    static func instance() -> ListEpisodesViewController {
+public final class ListEpisodesComposer {
+    public static func instance() -> ListEpisodesViewController {
         let useCase: ListEpisodes = RemoteListEpisodesFactory.instance()!
         return ListEpisodesControllerFactory.instance(with: useCase)
     }

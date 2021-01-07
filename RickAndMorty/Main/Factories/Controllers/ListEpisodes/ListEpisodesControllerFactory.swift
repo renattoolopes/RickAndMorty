@@ -10,7 +10,7 @@ import Domain
 import Presentation
 import UI
 
-final class ListEpisodesControllerFactory {
+public final class ListEpisodesControllerFactory {
 
     public static func instance(with useCase: ListEpisodes) -> ListEpisodesViewController {
         let controller: ListEpisodesViewController = ListEpisodesViewController()

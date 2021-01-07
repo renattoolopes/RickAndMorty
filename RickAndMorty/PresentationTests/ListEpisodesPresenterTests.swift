@@ -16,6 +16,7 @@ class ListEpisodesPresenterTests: XCTestCase {
         let listAll = ListEpisodesSpy()
         let sut: ListEpisodesPresenter = makeSut(loading: loading,useCase: listAll)
         let promise = expectation(description: "Waiting Loading")
+       
         loading.observer { (viewModel) in
             XCTAssertEqual(viewModel, LoadingViewModel(isLoading: true))
             promise.fulfill()
@@ -103,57 +104,5 @@ extension ListEpisodesPresenterTests {
                 airDate: defaultDate,
                 sessionEpisodeCode: "S01E02")
         ]
-    }
-}
-
-
-class LoadingSpy: LoadingViewProtocol {
-    var emit: ((LoadingViewModel) -> Void)?
-    
-    func observer(completion: @escaping (LoadingViewModel) -> Void) {
-        self.emit = completion
-    }
-    
-    func display(_ viewModel: LoadingViewModel) {
-        self.emit?(viewModel)
-    }
-}
-
-class AlertSpy: AlertViewProtocol {
-    var emit: ((AlertViewModel) -> Void)?
-    
-    func observer(completion: @escaping (AlertViewModel) -> Void) {
-        self.emit = completion
-    }
-    func show(_ viewModel: AlertViewModel) {
-        emit?(viewModel)
-    }
-}
-
-class ListEpisodesReactivitySpy: ListEpisodesReactivity {
-    var emit: (([EpisodeViewModel]) -> Void)?
-    
-    func observer(completion: @escaping ([EpisodeViewModel]) -> Void) {
-        self.emit = completion
-    }
-    
-    func didCompletedFindAll(episodes: [EpisodeViewModel]) {
-        self.emit?(episodes)
-    }
-}
-
-class ListEpisodesSpy: ListEpisodes {
-    var completion: (ListEpisodesResult)?
-    
-    func listAll(withCompletion completion: @escaping ListEpisodesResult) {
-        self.completion = completion
-    }
-    
-    func complitionWithSuccess(_ episodes: [Episode]) {
-        completion?(.success(episodes))
-    }
-    
-    func complitionWithError() {
-        completion?(.failure(DomainError.falureConvertionToData))
     }
 }

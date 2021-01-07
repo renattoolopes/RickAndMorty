@@ -45,6 +45,12 @@
 		FD5EDE0B25A7462D00858ACC /* RemoteListEpisodesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE0A25A7462D00858ACC /* RemoteListEpisodesFactory.swift */; };
 		FD5EDE1125A74C0D00858ACC /* ListEpisodesControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE1025A74C0D00858ACC /* ListEpisodesControllerFactory.swift */; };
 		FD5EDE2A25A74ED900858ACC /* ListEpisodesComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE2925A74ED900858ACC /* ListEpisodesComposer.swift */; };
+		FD5EDE4D25A77BF400858ACC /* MemoryLeakControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE4C25A77BF400858ACC /* MemoryLeakControllerTests.swift */; };
+		FD5EDE5525A77D8300858ACC /* ListEpisodesSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE5425A77D8300858ACC /* ListEpisodesSpy.swift */; };
+		FD5EDE5B25A77DB100858ACC /* ListEpisodesSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE5425A77D8300858ACC /* ListEpisodesSpy.swift */; };
+		FD5EDE6225A77DBE00858ACC /* ListEpisodesReactivitySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE6125A77DBE00858ACC /* ListEpisodesReactivitySpy.swift */; };
+		FD5EDE6925A77DCB00858ACC /* AlertSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE6825A77DCB00858ACC /* AlertSpy.swift */; };
+		FD5EDE7025A77DD200858ACC /* LoadingSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE6F25A77DD200858ACC /* LoadingSpy.swift */; };
 		FD896E362587F61400C66AC9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E352587F61400C66AC9 /* Episode.swift */; };
 		FD896E392587F7FF00C66AC9 /* ListEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E382587F7FF00C66AC9 /* ListEpisodes.swift */; };
 		FD896E512587FAED00C66AC9 /* RemoteListEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E502587FAED00C66AC9 /* RemoteListEpisodes.swift */; };
@@ -134,6 +140,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = FD25223B25882E3100B699F4;
 			remoteInfo = Presentation;
+		};
+		FD5EDE3D25A77BCB00858ACC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD896E102587F5BE00C66AC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDE4D6082589984700AADC52;
+			remoteInfo = Main;
 		};
 		FD896E572587FB1800C66AC9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -264,6 +277,13 @@
 		FD5EDE0A25A7462D00858ACC /* RemoteListEpisodesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteListEpisodesFactory.swift; sourceTree = "<group>"; };
 		FD5EDE1025A74C0D00858ACC /* ListEpisodesControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesControllerFactory.swift; sourceTree = "<group>"; };
 		FD5EDE2925A74ED900858ACC /* ListEpisodesComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesComposer.swift; sourceTree = "<group>"; };
+		FD5EDE3825A77BCB00858ACC /* MainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD5EDE3C25A77BCB00858ACC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD5EDE4C25A77BF400858ACC /* MemoryLeakControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLeakControllerTests.swift; sourceTree = "<group>"; };
+		FD5EDE5425A77D8300858ACC /* ListEpisodesSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesSpy.swift; sourceTree = "<group>"; };
+		FD5EDE6125A77DBE00858ACC /* ListEpisodesReactivitySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesReactivitySpy.swift; sourceTree = "<group>"; };
+		FD5EDE6825A77DCB00858ACC /* AlertSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSpy.swift; sourceTree = "<group>"; };
+		FD5EDE6F25A77DD200858ACC /* LoadingSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSpy.swift; sourceTree = "<group>"; };
 		FD896E2B2587F5E700C66AC9 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD896E2E2587F5E700C66AC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD896E352587F61400C66AC9 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -326,6 +346,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD41BFBC258A85A6001F7234 /* Presentation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD5EDE3525A77BCB00858ACC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +661,26 @@
 			path = Composer;
 			sourceTree = "<group>";
 		};
+		FD5EDE3925A77BCB00858ACC /* MainTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD5EDE3C25A77BCB00858ACC /* Info.plist */,
+				FD5EDE4C25A77BF400858ACC /* MemoryLeakControllerTests.swift */,
+			);
+			path = MainTests;
+			sourceTree = "<group>";
+		};
+		FD5EDE5325A77D7200858ACC /* Spy */ = {
+			isa = PBXGroup;
+			children = (
+				FD5EDE5425A77D8300858ACC /* ListEpisodesSpy.swift */,
+				FD5EDE6125A77DBE00858ACC /* ListEpisodesReactivitySpy.swift */,
+				FD5EDE6825A77DCB00858ACC /* AlertSpy.swift */,
+				FD5EDE6F25A77DD200858ACC /* LoadingSpy.swift */,
+			);
+			path = Spy;
+			sourceTree = "<group>";
+		};
 		FD896E0F2587F5BE00C66AC9 = {
 			isa = PBXGroup;
 			children = (
@@ -646,6 +693,7 @@
 				FD982B432590E6F1000BA11D /* PresentationTests */,
 				FD25227D25884BF700B699F4 /* UI */,
 				FDE4D60A2589984700AADC52 /* Main */,
+				FD5EDE3925A77BCB00858ACC /* MainTests */,
 				FD896E1A2587F5BE00C66AC9 /* Products */,
 				FD896E542587FB1800C66AC9 /* Frameworks */,
 			);
@@ -663,6 +711,7 @@
 				FDD9E3D2258C372800513EF5 /* DataTests.xctest */,
 				FD982B15258FCCD8000BA11D /* InfraTests.xctest */,
 				FD982B422590E6F1000BA11D /* PresentationTests.xctest */,
+				FD5EDE3825A77BCB00858ACC /* MainTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -797,6 +846,7 @@
 		FD982B432590E6F1000BA11D /* PresentationTests */ = {
 			isa = PBXGroup;
 			children = (
+				FD5EDE5325A77D7200858ACC /* Spy */,
 				FD982B462590E6F1000BA11D /* Info.plist */,
 				FD982B592590E73E000BA11D /* ListEpisodesPresenterTests.swift */,
 			);
@@ -988,6 +1038,24 @@
 			productReference = FD25227C25884BF700B699F4 /* UI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		FD5EDE3725A77BCB00858ACC /* MainTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD5EDE4125A77BCB00858ACC /* Build configuration list for PBXNativeTarget "MainTests" */;
+			buildPhases = (
+				FD5EDE3425A77BCB00858ACC /* Sources */,
+				FD5EDE3525A77BCB00858ACC /* Frameworks */,
+				FD5EDE3625A77BCB00858ACC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD5EDE3E25A77BCB00858ACC /* PBXTargetDependency */,
+			);
+			name = MainTests;
+			productName = MainTests;
+			productReference = FD5EDE3825A77BCB00858ACC /* MainTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FD896E2A2587F5E700C66AC9 /* Domain */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD896E302587F5E700C66AC9 /* Build configuration list for PBXNativeTarget "Domain" */;
@@ -1124,6 +1192,11 @@
 						CreatedOnToolsVersion = 12.0;
 						LastSwiftMigration = 1200;
 					};
+					FD5EDE3725A77BCB00858ACC = {
+						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
+						TestTargetID = FDE4D6082589984700AADC52;
+					};
 					FD896E2A2587F5E700C66AC9 = {
 						CreatedOnToolsVersion = 12.0;
 						LastSwiftMigration = 1200;
@@ -1171,6 +1244,7 @@
 				FDD9E3D1258C372800513EF5 /* DataTests */,
 				FD982B14258FCCD8000BA11D /* InfraTests */,
 				FD982B412590E6F1000BA11D /* PresentationTests */,
+				FD5EDE3725A77BCB00858ACC /* MainTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1195,6 +1269,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD41BFCD258AC122001F7234 /* UIAssets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD5EDE3625A77BCB00858ACC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1283,6 +1364,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FD5EDE3425A77BCB00858ACC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD5EDE5B25A77DB100858ACC /* ListEpisodesSpy.swift in Sources */,
+				FD5EDE4D25A77BF400858ACC /* MemoryLeakControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD896E272587F5E700C66AC9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1323,7 +1413,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD5EDE7025A77DD200858ACC /* LoadingSpy.swift in Sources */,
+				FD5EDE5525A77D8300858ACC /* ListEpisodesSpy.swift in Sources */,
+				FD5EDE6925A77DCB00858ACC /* AlertSpy.swift in Sources */,
 				FD982B5A2590E73E000BA11D /* ListEpisodesPresenterTests.swift in Sources */,
+				FD5EDE6225A77DBE00858ACC /* ListEpisodesReactivitySpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1393,6 +1487,11 @@
 			isa = PBXTargetDependency;
 			target = FD25223B25882E3100B699F4 /* Presentation */;
 			targetProxy = FD41BFBE258A85A6001F7234 /* PBXContainerItemProxy */;
+		};
+		FD5EDE3E25A77BCB00858ACC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDE4D6082589984700AADC52 /* Main */;
+			targetProxy = FD5EDE3D25A77BCB00858ACC /* PBXContainerItemProxy */;
 		};
 		FD896E582587FB1800C66AC9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1595,6 +1694,54 @@
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FD5EDE3F25A77BCB00858ACC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FCZ6JTPKG7;
+				INFOPLIST_FILE = MainTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.renatolopes.MainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Main.app/Main";
+			};
+			name = Debug;
+		};
+		FD5EDE4025A77BCB00858ACC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FCZ6JTPKG7;
+				INFOPLIST_FILE = MainTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.renatolopes.MainTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Main.app/Main";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2020,6 +2167,15 @@
 			buildConfigurations = (
 				FD25228125884BF700B699F4 /* Debug */,
 				FD25228225884BF700B699F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD5EDE4125A77BCB00858ACC /* Build configuration list for PBXNativeTarget "MainTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD5EDE3F25A77BCB00858ACC /* Debug */,
+				FD5EDE4025A77BCB00858ACC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
