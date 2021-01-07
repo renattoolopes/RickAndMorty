@@ -51,6 +51,7 @@
 		FD5EDE6225A77DBE00858ACC /* ListEpisodesReactivitySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE6125A77DBE00858ACC /* ListEpisodesReactivitySpy.swift */; };
 		FD5EDE6925A77DCB00858ACC /* AlertSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE6825A77DCB00858ACC /* AlertSpy.swift */; };
 		FD5EDE7025A77DD200858ACC /* LoadingSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE6F25A77DD200858ACC /* LoadingSpy.swift */; };
+		FD5EDE7925A783BD00858ACC /* WeakProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE7825A783BD00858ACC /* WeakProxy.swift */; };
 		FD896E362587F61400C66AC9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E352587F61400C66AC9 /* Episode.swift */; };
 		FD896E392587F7FF00C66AC9 /* ListEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E382587F7FF00C66AC9 /* ListEpisodes.swift */; };
 		FD896E512587FAED00C66AC9 /* RemoteListEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E502587FAED00C66AC9 /* RemoteListEpisodes.swift */; };
@@ -284,6 +285,7 @@
 		FD5EDE6125A77DBE00858ACC /* ListEpisodesReactivitySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesReactivitySpy.swift; sourceTree = "<group>"; };
 		FD5EDE6825A77DCB00858ACC /* AlertSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSpy.swift; sourceTree = "<group>"; };
 		FD5EDE6F25A77DD200858ACC /* LoadingSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingSpy.swift; sourceTree = "<group>"; };
+		FD5EDE7825A783BD00858ACC /* WeakProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakProxy.swift; sourceTree = "<group>"; };
 		FD896E2B2587F5E700C66AC9 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD896E2E2587F5E700C66AC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD896E352587F61400C66AC9 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -681,6 +683,22 @@
 			path = Spy;
 			sourceTree = "<group>";
 		};
+		FD5EDE7625A7839D00858ACC /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				FD5EDE7725A783A600858ACC /* WeakProxy */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
+		FD5EDE7725A783A600858ACC /* WeakProxy */ = {
+			isa = PBXGroup;
+			children = (
+				FD5EDE7825A783BD00858ACC /* WeakProxy.swift */,
+			);
+			path = WeakProxy;
+			sourceTree = "<group>";
+		};
 		FD896E0F2587F5BE00C66AC9 = {
 			isa = PBXGroup;
 			children = (
@@ -926,6 +944,7 @@
 		FDE4D60A2589984700AADC52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FD5EDE7625A7839D00858ACC /* Proxy */,
 				FD5EDE2825A74EBB00858ACC /* Composer */,
 				FD9185CC25A3D80A00115FBB /* Env */,
 				FDD9E3CC258C33F500513EF5 /* Resources */,
@@ -1439,6 +1458,7 @@
 				FDD9E3C1258C25AC00513EF5 /* DetailsEpisodeControllerFactory.swift in Sources */,
 				FDE4D60E2589984700AADC52 /* SceneDelegate.swift in Sources */,
 				FD5EDE2A25A74ED900858ACC /* ListEpisodesComposer.swift in Sources */,
+				FD5EDE7925A783BD00858ACC /* WeakProxy.swift in Sources */,
 				FD5EDE0B25A7462D00858ACC /* RemoteListEpisodesFactory.swift in Sources */,
 				FD5EDE1125A74C0D00858ACC /* ListEpisodesControllerFactory.swift in Sources */,
 				FD9185D825A3D91B00115FBB /* Environment.swift in Sources */,
