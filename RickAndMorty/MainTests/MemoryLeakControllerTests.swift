@@ -12,8 +12,10 @@ import UI
 class MemoryLeakControllerTests: XCTestCase {
 
     func testDealocationListEpisodesViewController() {
-        let listEpisodesSpy: ListEpisodes = 
+        let listEpisodesSpy: ListEpisodesSpy = ListEpisodesSpy()
         let sut: ListEpisodesViewController = ListEpisodesControllerFactory.instance(with: listEpisodesSpy)
-        
+        addTeardownBlock {
+            XCTAssertNil(sut)
+        }
     }
 }
