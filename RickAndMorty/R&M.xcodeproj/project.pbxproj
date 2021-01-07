@@ -26,7 +26,6 @@
 		FD25228D25884DF900B699F4 /* ListEpisodesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD25228C25884DF900B699F4 /* ListEpisodesView.swift */; };
 		FD2522922588511400B699F4 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2522912588511400B699F4 /* EpisodeCell.swift */; };
 		FD41BF97258A581F001F7234 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41BF96258A581F001F7234 /* UIView+Extensions.swift */; };
-		FD41BF9F258A7C25001F7234 /* ListEpisodesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41BF9E258A7C25001F7234 /* ListEpisodesFactory.swift */; };
 		FD41BFA6258A7CDE001F7234 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD896E422587FA9900C66AC9 /* Data.framework */; };
 		FD41BFA7258A7CDE001F7234 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD896E422587FA9900C66AC9 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FD41BFAA258A7CDE001F7234 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD896E2B2587F5E700C66AC9 /* Domain.framework */; };
@@ -43,6 +42,9 @@
 		FD41BFDE258AD7D5001F7234 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41BFDD258AD7D5001F7234 /* LoadingView.swift */; };
 		FD41BFE6258AF093001F7234 /* DetailsEpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41BFE5258AF093001F7234 /* DetailsEpisodeViewController.swift */; };
 		FD41BFEA258AF135001F7234 /* DetailsEpisodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41BFE9258AF135001F7234 /* DetailsEpisodeView.swift */; };
+		FD5EDE0B25A7462D00858ACC /* RemoteListEpisodesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE0A25A7462D00858ACC /* RemoteListEpisodesFactory.swift */; };
+		FD5EDE1125A74C0D00858ACC /* ListEpisodesControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE1025A74C0D00858ACC /* ListEpisodesControllerFactory.swift */; };
+		FD5EDE2A25A74ED900858ACC /* ListEpisodesComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5EDE2925A74ED900858ACC /* ListEpisodesComposer.swift */; };
 		FD896E362587F61400C66AC9 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E352587F61400C66AC9 /* Episode.swift */; };
 		FD896E392587F7FF00C66AC9 /* ListEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E382587F7FF00C66AC9 /* ListEpisodes.swift */; };
 		FD896E512587FAED00C66AC9 /* RemoteListEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD896E502587FAED00C66AC9 /* RemoteListEpisodes.swift */; };
@@ -62,7 +64,7 @@
 		FD982B5A2590E73E000BA11D /* ListEpisodesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD982B592590E73E000BA11D /* ListEpisodesPresenterTests.swift */; };
 		FDD9E3B6258BC0F000513EF5 /* DetailEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9E3B5258BC0F000513EF5 /* DetailEpisode.swift */; };
 		FDD9E3BC258BD43400513EF5 /* ListEpisodesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9E3BB258BD43300513EF5 /* ListEpisodesCoordinator.swift */; };
-		FDD9E3C1258C25AC00513EF5 /* DetailsEpisodeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9E3C0258C25AC00513EF5 /* DetailsEpisodeFactory.swift */; };
+		FDD9E3C1258C25AC00513EF5 /* DetailsEpisodeControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9E3C0258C25AC00513EF5 /* DetailsEpisodeControllerFactory.swift */; };
 		FDD9E3C6258C26FD00513EF5 /* CoordinatorFactoriesInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9E3C5258C26FD00513EF5 /* CoordinatorFactoriesInjector.swift */; };
 		FDD9E3D7258C372800513EF5 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD896E422587FA9900C66AC9 /* Data.framework */; };
 		FDD9E3E5258C377D00513EF5 /* RemoteListEpisodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD9E3E4258C377D00513EF5 /* RemoteListEpisodesTests.swift */; };
@@ -253,13 +255,15 @@
 		FD25228C25884DF900B699F4 /* ListEpisodesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesView.swift; sourceTree = "<group>"; };
 		FD2522912588511400B699F4 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		FD41BF96258A581F001F7234 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		FD41BF9E258A7C25001F7234 /* ListEpisodesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesFactory.swift; sourceTree = "<group>"; };
 		FD41BFC3258AA209001F7234 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		FD41BFC8258AA278001F7234 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		FD41BFCC258AC122001F7234 /* UIAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = UIAssets.xcassets; sourceTree = "<group>"; };
 		FD41BFDD258AD7D5001F7234 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		FD41BFE5258AF093001F7234 /* DetailsEpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEpisodeViewController.swift; sourceTree = "<group>"; };
 		FD41BFE9258AF135001F7234 /* DetailsEpisodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEpisodeView.swift; sourceTree = "<group>"; };
+		FD5EDE0A25A7462D00858ACC /* RemoteListEpisodesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteListEpisodesFactory.swift; sourceTree = "<group>"; };
+		FD5EDE1025A74C0D00858ACC /* ListEpisodesControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesControllerFactory.swift; sourceTree = "<group>"; };
+		FD5EDE2925A74ED900858ACC /* ListEpisodesComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesComposer.swift; sourceTree = "<group>"; };
 		FD896E2B2587F5E700C66AC9 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD896E2E2587F5E700C66AC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD896E352587F61400C66AC9 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -284,7 +288,7 @@
 		FD982B592590E73E000BA11D /* ListEpisodesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesPresenterTests.swift; sourceTree = "<group>"; };
 		FDD9E3B5258BC0F000513EF5 /* DetailEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEpisode.swift; sourceTree = "<group>"; };
 		FDD9E3BB258BD43300513EF5 /* ListEpisodesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListEpisodesCoordinator.swift; sourceTree = "<group>"; };
-		FDD9E3C0258C25AC00513EF5 /* DetailsEpisodeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEpisodeFactory.swift; sourceTree = "<group>"; };
+		FDD9E3C0258C25AC00513EF5 /* DetailsEpisodeControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEpisodeControllerFactory.swift; sourceTree = "<group>"; };
 		FDD9E3C5258C26FD00513EF5 /* CoordinatorFactoriesInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoriesInjector.swift; sourceTree = "<group>"; };
 		FDD9E3D2258C372800513EF5 /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD9E3D6258C372800513EF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -534,18 +538,10 @@
 		FD41BF9C258A7C03001F7234 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				FDD9E3BF258C259F00513EF5 /* DetailsEpisode */,
-				FD41BF9D258A7C10001F7234 /* ListEpisodes */,
+				FD5EDE0925A745E300858ACC /* Controllers */,
+				FD5EDE0825A745DB00858ACC /* UseCases */,
 			);
 			path = Factories;
-			sourceTree = "<group>";
-		};
-		FD41BF9D258A7C10001F7234 /* ListEpisodes */ = {
-			isa = PBXGroup;
-			children = (
-				FD41BF9E258A7C25001F7234 /* ListEpisodesFactory.swift */,
-			);
-			path = ListEpisodes;
 			sourceTree = "<group>";
 		};
 		FD41BFC2258AA1FD001F7234 /* StyleGuide */ = {
@@ -595,6 +591,47 @@
 				FD41BFE9258AF135001F7234 /* DetailsEpisodeView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FD5EDE0825A745DB00858ACC /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				FD5EDE1E25A74D3700858ACC /* ListEpisodes */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		FD5EDE0925A745E300858ACC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD5EDE1F25A74D4100858ACC /* ListEpisodes */,
+				FDD9E3BF258C259F00513EF5 /* DetailsEpisode */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FD5EDE1E25A74D3700858ACC /* ListEpisodes */ = {
+			isa = PBXGroup;
+			children = (
+				FD5EDE0A25A7462D00858ACC /* RemoteListEpisodesFactory.swift */,
+			);
+			path = ListEpisodes;
+			sourceTree = "<group>";
+		};
+		FD5EDE1F25A74D4100858ACC /* ListEpisodes */ = {
+			isa = PBXGroup;
+			children = (
+				FD5EDE1025A74C0D00858ACC /* ListEpisodesControllerFactory.swift */,
+			);
+			path = ListEpisodes;
+			sourceTree = "<group>";
+		};
+		FD5EDE2825A74EBB00858ACC /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				FD5EDE2925A74ED900858ACC /* ListEpisodesComposer.swift */,
+			);
+			path = Composer;
 			sourceTree = "<group>";
 		};
 		FD896E0F2587F5BE00C66AC9 = {
@@ -778,7 +815,7 @@
 		FDD9E3BF258C259F00513EF5 /* DetailsEpisode */ = {
 			isa = PBXGroup;
 			children = (
-				FDD9E3C0258C25AC00513EF5 /* DetailsEpisodeFactory.swift */,
+				FDD9E3C0258C25AC00513EF5 /* DetailsEpisodeControllerFactory.swift */,
 			);
 			path = DetailsEpisode;
 			sourceTree = "<group>";
@@ -839,6 +876,7 @@
 		FDE4D60A2589984700AADC52 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FD5EDE2825A74EBB00858ACC /* Composer */,
 				FD9185CC25A3D80A00115FBB /* Env */,
 				FDD9E3CC258C33F500513EF5 /* Resources */,
 				FDD9E3CB258C33E900513EF5 /* Configuration */,
@@ -1304,9 +1342,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDE4D60C2589984700AADC52 /* AppDelegate.swift in Sources */,
-				FDD9E3C1258C25AC00513EF5 /* DetailsEpisodeFactory.swift in Sources */,
+				FDD9E3C1258C25AC00513EF5 /* DetailsEpisodeControllerFactory.swift in Sources */,
 				FDE4D60E2589984700AADC52 /* SceneDelegate.swift in Sources */,
-				FD41BF9F258A7C25001F7234 /* ListEpisodesFactory.swift in Sources */,
+				FD5EDE2A25A74ED900858ACC /* ListEpisodesComposer.swift in Sources */,
+				FD5EDE0B25A7462D00858ACC /* RemoteListEpisodesFactory.swift in Sources */,
+				FD5EDE1125A74C0D00858ACC /* ListEpisodesControllerFactory.swift in Sources */,
 				FD9185D825A3D91B00115FBB /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

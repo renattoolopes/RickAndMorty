@@ -15,11 +15,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     private func addFactoriesForCoordinators() {
         let injector: CoordinatorFactoriesInjector = CoordinatorFactoriesInjector.shared
+        
         injector.register(forType: ListEpisodesViewController.self,
-                                    factory: ListEpisodesFactory.instance)
+                          factory: ListEpisodesComposer.instance)
         
         injector.register(forType: DetailsEpisodeViewController.self,
-                                    factory: DetailsEpisodeFactory.instance)
+                                    factory: DetailsEpisodeControllerFactory.instance)
     }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
