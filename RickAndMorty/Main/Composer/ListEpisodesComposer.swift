@@ -11,7 +11,7 @@ import UI
 
 public final class ListEpisodesComposer {
     public static func instance() -> ListEpisodesViewController {
-        let useCase: ListEpisodes = RemoteListEpisodesFactory.instance()!
+        let useCase: ListEpisodes = ListEpisodesUseCaseFactory.instance()!
         return ListEpisodesControllerFactory.instance(with: useCase)
     }
 }

@@ -19,6 +19,7 @@ public final class ListEpisodesControllerFactory {
                                                                      loadingView: WeakProxy(controller),
                                                                      alertView: WeakProxy(controller),
                                                                      delegate: WeakProxy(controller))
+        
         controller.title = "Episodios"
         controller.listAllEpisodes = presenter.findAllEpisodes
         return controller

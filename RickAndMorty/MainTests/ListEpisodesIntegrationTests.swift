@@ -7,6 +7,7 @@
 
 import XCTest
 import Main
+import Presentation
 import UI
 
 class ListEpisodesIntegrationTests: XCTestCase {
@@ -21,7 +22,8 @@ class ListEpisodesIntegrationTests: XCTestCase {
     
     func testIfExcutedUIManipulationsInMainThread() {
         let listEpisodesSpy: ListEpisodesSpy = ListEpisodesSpy()
-        let sut: ListEpisodesViewController = ListEpisodesControllerFactory.instance(with: listEpisodesSpy)
+        let decorator = DispatchQueueMainDecorator(instance: listEpisodesSpy)
+        let sut: ListEpisodesViewController = ListEpisodesControllerFactory.instance(with: decorator)
         let promise = expectation(description: "Try force crash in UI after callback of request")
         sut.loadViewIfNeeded()
         sut.listAllEpisodes()
@@ -33,3 +35,5 @@ class ListEpisodesIntegrationTests: XCTestCase {
     }
     
 }
+
+

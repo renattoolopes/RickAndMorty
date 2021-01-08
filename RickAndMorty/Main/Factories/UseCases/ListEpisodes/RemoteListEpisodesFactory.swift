@@ -11,12 +11,14 @@ import Data
 import Infra
 
 
-final class RemoteListEpisodesFactory {
+final class ListEpisodesUseCaseFactory {
 
-    public static func instance() -> RemoteListEpisodes? {
+    public static func instance() -> ListEpisodes? {
         let httpGetClient: HttpGetClient = URLSessionAdapter()
         guard let url: URL = makeURL(path: "episode") else { return nil }        
-        return RemoteListEpisodes(httpGetClient: httpGetClient, url: url)
+        let remote: RemoteListEpisodes = RemoteListEpisodes(httpGetClient: httpGetClient, url: url)
+    
+        return DispatchQueueMainDecorator(instance: remote)
     }
     
     private static func makeURL(path: String) -> URL? {
