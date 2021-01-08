@@ -35,8 +35,7 @@ public final class ListEpisodesPresenter {
     // MARK: - Public Methods
     public func findAllEpisodes() {
         loading.display(LoadingViewModel(isLoading: true))
-        listEpisodes.listAll { [weak self] result in
-            guard let self: ListEpisodesPresenter = self else { return }
+        listEpisodes.listAll { result in
             switch result {
             case .success(let episodes):
                 self.loading.display(LoadingViewModel(isLoading: false))

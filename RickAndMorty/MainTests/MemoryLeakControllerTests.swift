@@ -6,16 +6,9 @@
 //
 
 import XCTest
-import Main
-import UI
+
 
 class MemoryLeakControllerTests: XCTestCase {
 
-    func testDealocationListEpisodesViewController() {
-        let listEpisodesSpy: ListEpisodesSpy = ListEpisodesSpy()
-        let sut: ListEpisodesViewController = ListEpisodesControllerFactory.instance(with: listEpisodesSpy)
-        addTeardownBlock { [weak sut] in
-            XCTAssertNil(sut)
-        }
-    }
+
 }

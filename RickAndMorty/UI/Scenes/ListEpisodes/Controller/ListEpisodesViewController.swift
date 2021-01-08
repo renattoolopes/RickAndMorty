@@ -83,13 +83,9 @@ extension ListEpisodesViewController: ListEpisodesReactivity {
 extension ListEpisodesViewController: LoadingViewProtocol {
     public func display(_ viewModel: LoadingViewModel) {
         if viewModel.isLoading {
-            DispatchQueue.main.async {
-                self.loadingView.startLoading(inView: self.view)
-            }
+            self.loadingView.startLoading(inView: self.view)
         } else {
-            DispatchQueue.main.async {
-                self.loadingView.stopLoading()
-            }
+            self.loadingView.stopLoading()
         }
     }
 }
