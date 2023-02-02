@@ -1,0 +1,17 @@
+name: iOS Tests
+
+on: [push]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Run unit tests in data layer
+      run: xcodebuild -project 'RickAndMorty/R&M.xcodeproj' -scheme 'DataTests' test
