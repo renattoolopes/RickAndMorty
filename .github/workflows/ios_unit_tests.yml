@@ -1,6 +1,11 @@
 name: iOS Tests
 
-on: [push]
+on:
+  pull_request:
+    branches: 
+      - develop
+      - main
+      - 'feature/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -13,5 +18,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    
+    - name: Run unit tests in data layer
+      run: xcodebuild -project 'RickAndMorty/R&M.xcodeproj' -scheme 'InfraTests' test CODE_SIGNING_ALLOWED=NO
+   
     - name: Run unit tests in data layer
       run: xcodebuild -project 'RickAndMorty/R&M.xcodeproj' -scheme 'DataTests' test CODE_SIGNING_ALLOWED=NO
+    
+    - name: Run unit tests in data layer
+      run: xcodebuild -project 'RickAndMorty/R&M.xcodeproj' -scheme 'PresentationTests' test CODE_SIGNING_ALLOWED=NO
