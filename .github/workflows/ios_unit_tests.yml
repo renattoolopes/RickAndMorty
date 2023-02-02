@@ -14,4 +14,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run unit tests in data layer
-      run: xcodebuild -project 'RickAndMorty/R&M.xcodeproj' -scheme 'DataTests' test
+      run: xcodebuild -project 'RickAndMorty/R&M.xcodeproj' -scheme 'DataTests' test CODE_SIGNING_ALLOWED=NO
